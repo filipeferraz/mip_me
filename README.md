@@ -1,3 +1,5 @@
+![Tests](https://github.com/filipeferraz/mip_me/actions/workflows/test.yml/badge.svg?branch=develop)
+
 # Mip Me
 This repository hosts the package that is built along the 
 [Mip Go](https://www.mipwise.com/mip-go) program and solves the 
