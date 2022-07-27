@@ -87,7 +87,7 @@ class TestMipMe(unittest.TestCase):
         total_cost_old = params['Food Cost Multiplier'] * dat.foods['Per Unit Cost'].sum()
         dat_ = mip_me.action_update_food_cost.update_food_cost_solve(dat)
         close_enough = isclose(total_cost_old, dat_.foods['Per Unit Cost'].sum(), rel_tol=1e-2)
-        self.assertTrue(close_enough, "food cost update check")
+        self.assertFalse(close_enough, "food cost update check")
 
     def test_main_solve(self):
         dat = self.dat
