@@ -8,7 +8,10 @@ on:
 
 jobs:
   run-tests:
-    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-22.04]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout repositório
         uses: actions/checkout@v3
@@ -54,5 +57,5 @@ jobs:
       - name: Export artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: module.zip
+          name: module
           path: dist/
